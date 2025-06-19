@@ -9,14 +9,22 @@ const deleteIglooModal = document.getElementById("deleteIglooModal");
 
 generateIgloosCarousel();
 
-deleteIglooModal.addEventListener("show.bs.modal", (e) => {
-    const button = e.relatedTarget;
-    const iglooId = button.getAttribute("data-id");
-    const iglooName = button.getAttribute("data-name");
+document.addEventListener("DOMContentLoaded", function () {
+    const deleteModal = document.getElementById("deleteModal");
 
-    document.getElementById("iglooNameInModal").textContent = iglooName;
-    document.getElementById("iglooIdInModal").textContent = iglooId;
+    if (deleteModal) {
+        deleteModal.addEventListener("show.bs.modal", function (event) {
+            const button = event.relatedTarget;
 
-    const form = document.getElementById("deleteIglooForm");
-    form.action = `/igloos/${iglooId}`;
+            const id = button.getAttribute("data-id");
+            const name = button.getAttribute("data-name");
+            const url = button.getAttribute("data-url");
+
+            document.getElementById("itemIdInModal").textContent = id;
+            document.getElementById("itemNameInModal").textContent = name;
+
+            const form = document.getElementById("deleteForm");
+            form.action = url;
+        });
+    }
 });
