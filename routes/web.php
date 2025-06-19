@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BookingController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DiscountController;
 use App\Http\Controllers\HomeController;
@@ -34,3 +35,5 @@ Route::delete('/employees/{employee}', [EmployeeController::class, 'destroy'])->
 Route::resource('customers', CustomerController::class);
 
 Route::resource('discounts', DiscountController::class);
+
+Route::resource('bookings', BookingController::class);

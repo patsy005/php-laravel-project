@@ -27,6 +27,12 @@ class Booking extends Model
         'late_check_out'
     ];
 
+    protected $casts = [
+        'check_in_date' => 'datetime',
+        'check_out_date' => 'datetime',
+    ];
+
+
     public function igloo()
     {
         return $this->belongsTo(Igloo::class);
