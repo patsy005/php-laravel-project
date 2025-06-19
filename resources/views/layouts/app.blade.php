@@ -47,7 +47,7 @@
                     <a class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}" aria-current="page" href="{{ route('home') }}">Home</a>
                     <a class="nav-link" href="#">Bookings</a>
                     <a class="nav-link {{ request()->routeIs('igloos.*') ? 'active' : '' }}" href="{{ route('igloos.index') }}">Igloos</a>
-                    <a class="nav-link" href="#">Employees</a>
+                    <a class="nav-link {{ request()->routeIs('employees.*') ? 'active' : '' }}" href="{{ route('employees.index') }}">Employees</a>
                     <a class="nav-link" href="#">Customers</a>
                     <a class="nav-link" href="#">Discounts</a>
                 </div>
@@ -62,15 +62,15 @@
                     <header class="header">
                         <div class="user">
                             <div class="user__img">
-                                <img src="{{ asset('images/employees/sophie.jpg') }}" alt="user image" />
+                                <img src="{{ asset('images/employees/' . $authEmployee->image) }}" alt="user image" />
                                 <div class="user__status user__status--active"></div>
                             </div>
                             <div class="user__data">
                                 <h4 class="user__name">
-                                    {{ $employee->name}} {{ $employee->surname }}
+                                    {{ $authEmployee->name}} {{ $authEmployee->surname }}
                                 </h4>
                                 <p class="user__email">
-                                    {{ $employee->email }}
+                                    {{ $authEmployee->email }}
                                 </p>
                             </div>
                         </div>
