@@ -1,4 +1,4 @@
-version: '3.8'
+version: "3.8"
 
 services:
     mysql:
@@ -24,4 +24,4 @@ services:
             PMA_HOST: mysql_container
             PMA_PORT: 3306
 volumes:
-    mysql_data:
+    - ./docker/mysql/init:/docker-entrypoint-initdb.d
