@@ -38,7 +38,6 @@
                                     </div>
                                 </div>
 
-                                {{-- Cena za noc --}}
                                 <div class="overview-card col-9 col-sm-7 col-md-8 col-lg-5 col-xxl-4 mt-3">
                                     <div class="overview-card__stats">
                                         <div class="overview-card__stats--box">
@@ -48,22 +47,23 @@
                                     </div>
                                 </div>
 
-                                <div class="item-section__actions mt-3 d-flex gap-3">
-                                    <a href="{{ route('igloos.edit', $igloo) }}" class="custom-table__actions--icon bg-transparent border-1">
-                                        <img src="{{ asset('icons/edit.svg') }}" alt="Edit" />
-                                    </a>
 
-                                    <button
-                                        class="svg-button"
-                                        data-bs-toggle="modal"
-                                        data-bs-target="#deleteModal"
-                                        data-id="{{ $igloo->id }}"
-                                        data-name="{{ $igloo->name }}"
-                                        data-url="{{ route('igloos.destroy', $igloo->id) }}">
-                                        <img src="{{ asset('icons/delete.svg') }}" alt="Delete" />
-                                    </button>
+                            </div>
 
-                                </div>
+                            <div class="item-section__actions mt-3 d-flex gap-3">
+                                <a href="{{ route('igloos.edit', $igloo) }}" class="custom-table__actions--icon bg-transparent border-1">
+                                    <img src="{{ asset('icons/edit.svg') }}" alt="Edit" />
+                                </a>
+
+                                <button
+                                    class="svg-button"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#deleteModal"
+                                    data-id="{{ $igloo->id }}"
+                                    data-name="{{ $igloo->name }}"
+                                    data-url="{{ route('igloos.destroy', $igloo->id) }}">
+                                    <img src="{{ asset('icons/delete.svg') }}" alt="Delete" />
+                                </button>
 
                             </div>
                         </div>
