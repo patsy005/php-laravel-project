@@ -13,6 +13,13 @@ class Discount extends Model
         'name',
         'discount_percentage',
         'description',
+        'valid_from',
+        'valid_to',
+    ];
+
+    protected $casts = [
+        'valid_from' => 'date',
+        'valid_to' => 'date',
     ];
 
     public function igloo()

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\DiscountController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IglooController;
@@ -31,3 +32,5 @@ Route::put('/employees/{employee}', [EmployeeController::class, 'update'])->name
 Route::delete('/employees/{employee}', [EmployeeController::class, 'destroy'])->name('employees.destroy');
 
 Route::resource('customers', CustomerController::class);
+
+Route::resource('discounts', DiscountController::class);
