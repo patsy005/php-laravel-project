@@ -48,7 +48,7 @@
                     <a class="nav-link" href="#">Bookings</a>
                     <a class="nav-link {{ request()->routeIs('igloos.*') ? 'active' : '' }}" href="{{ route('igloos.index') }}">Igloos</a>
                     <a class="nav-link {{ request()->routeIs('employees.*') ? 'active' : '' }}" href="{{ route('employees.index') }}">Employees</a>
-                    <a class="nav-link" href="#">Customers</a>
+                    <a class="nav-link {{ request()->routeIs('customers.*') ? 'active' : '' }}" href="{{ route('customers.index') }}">Customers</a>
                     <a class="nav-link" href="#">Discounts</a>
                 </div>
             </div>

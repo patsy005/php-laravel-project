@@ -18,6 +18,7 @@ class Customer extends Model
         'house_number',
         'city',
         'country',
+        'nationality',
         'postal_code',
         'created_at',
     ];
