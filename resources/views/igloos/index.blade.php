@@ -92,7 +92,13 @@
                                     </form>
 
 
-                                    <button class="svg-button" data-bs-toggle="modal" data-bs-target="#deleteIglooModal" data-id="{{ $igloo->id }}" data-name="{{ $igloo->name }}">
+                                    <button
+                                        class="svg-button"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#deleteModal"
+                                        data-id="{{ $igloo->id }}"
+                                        data-name="{{ $igloo->name }}"
+                                        data-url="{{ route('igloos.destroy', $igloo->id) }}">
                                         <img src="{{ asset('icons/delete.svg') }}" alt="Delete" />
                                     </button>
                                 </div>
