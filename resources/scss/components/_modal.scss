@@ -1,0 +1,37 @@
+@use "../abstracts";
+
+.modal.show {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+
+    .modal-dialog {
+        width: 30%;
+    }
+
+    .modal-header {
+        // border-bottom: 1px solid abstracts.$blue;
+        padding: 1rem;
+
+        .btn-close {
+            color: abstracts.$blue-dark;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    .modal-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: abstracts.$blue-dark;
+    }
+
+    .modal-body {
+        // border-bottom: 1px solid abstracts.$blue;
+        padding: 1rem;
+        font-size: 1.4rem;
+    }
+}

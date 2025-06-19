@@ -1,0 +1,24 @@
+@use '../abstracts';
+
+.input-box {
+    border-radius: 4px;
+    padding: .8rem .5rem;
+    border: 1px solid abstracts.$blue;
+    color: abstracts.$blue-dark;
+    transition: all .3s ease-in-out;
+    height: 100%;
+    font-size: 1.2rem;
+    max-height: 36px;
+
+    &::placeholder {
+        color: abstracts.$blue-dark;
+    }
+
+    &:hover, &:focus {
+        border-color: abstracts.$blue-dark;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
