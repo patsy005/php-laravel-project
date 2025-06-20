@@ -91,9 +91,9 @@
                             <select name="role_id" class="input-box">
                                 <option value="">--</option>
                                 @foreach($roles as $role)
-                                    <option value="{{ $role->id }}" {{ old('role_id') == $role->id ? 'selected' : '' }}>
-                                        {{ $role->name }}
-                                    </option>
+                                <option value="{{ $role->id }}" {{ old('role_id') == $role->id ? 'selected' : '' }}>
+                                    {{ $role->name }}
+                                </option>
                                 @endforeach
                             </select>
                             @error('role_id') <p style="color:#FF4D4D">{{ $message }}</p> @enderror
@@ -103,6 +103,20 @@
                             <label for="image">Image</label>
                             <input type="file" name="image" class="input-box">
                             @error('image') <p style="color:#FF4D4D">{{ $message }}</p> @enderror
+                        </div>
+
+                        <div class="form-box d-flex justify-content-between row">
+                            <div class="input-container col-6 ps-0">
+                                <label for="login">Login</label>
+                                <input type="text" name="login" class="input-box" value="{{ old('login') }}">
+                                @error('login') <p style="color:#FF4D4D">{{ $message }}</p> @enderror
+                            </div>
+
+                            <div class="input-container col-6 pe-0">
+                                <label for="password">Password</label>
+                                <input type="password" name="password" class="input-box">
+                                @error('password') <p style="color:#FF4D4D">{{ $message }}</p> @enderror
+                            </div>
                         </div>
 
                         <button type="submit" class="button col-2 align-self-end">Add</button>

@@ -1,0 +1,19 @@
+@use '../abstracts';
+
+.section {
+    &__form--login {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        padding: 20px;
+
+        form {
+            border-radius: 6px;
+            border: 1px solid abstracts.$blue;
+            padding: 1.3rem;
+            background-color: white;
+        }
+    }
+}

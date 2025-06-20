@@ -82,9 +82,12 @@
                             <button class="btn">
                                 <img src="{{ asset('icons/notification.svg') }}" alt="" />
                             </button>
-                            <a href="../../php/logout/logoutEmployee.php" class="btn">
-                                <img src="{{ asset('icons/logout.svg') }}" alt="" />
-                            </a>
+                            <form method="POST" action="{{ route('employee.logout') }}">
+                                @csrf
+                                <button class="svg-button">
+                                    <img src="{{ asset('icons/logout.svg') }}" alt="">
+                                </button>
+                            </form>
                         </div>
                     </header>
 

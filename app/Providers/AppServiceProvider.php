@@ -6,6 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use App\Models\Employee;
 // use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Session;
 
 
 class AppServiceProvider extends ServiceProvider
@@ -24,7 +25,13 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         View::composer('*', function ($view) {
-            $view->with('authEmployee', Employee::first());
+            $authEmployee = null;
+
+            if (Session::has('employee_id')) {
+                $authEmployee = Employee::find(Session::get('employee_id'));
+            }
+
+            $view->with('authEmployee', $authEmployee);
         });
     }
 }

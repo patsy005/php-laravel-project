@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Employee;
 use App\Models\EmployeeRole;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 
@@ -69,6 +70,8 @@ class EmployeeController extends Controller
             'postal_code' => 'required|string|max:20',
             'role_id' => 'required|exists:employee_role,id',
             'image' => 'nullable|image|max:2048',
+            'login' => 'required|string|max:255',
+            'password' => 'required|string|min:8',
         ], [
             'name.required' => 'The name field is required.',
             'surname.required' => 'The surname field is required.',
@@ -86,7 +89,13 @@ class EmployeeController extends Controller
             'role_id.exists' => 'The selected role is invalid.',
             'image.image' => 'The image must be a valid image file.',
             'image.max' => 'The image may not be greater than 2MB.',
+            'login.required' => 'The login field is required.',
+            'login.unique' => 'The login has already been taken.',
+            'password.required' => 'The password field is required.',
+            'password.min' => 'The password must be at least 8 characters.',
         ]);
+
+        $data['password'] = Hash::make($data['password']);
 
         if ($request->hasFile('image')) {
             $image = $request->file('image');

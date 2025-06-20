@@ -22,6 +22,12 @@ class Employee extends Model
         'role_id',
         'created_at',
         'image',
+        'login',
+        'password',
+    ];
+
+    protected $hidden = [
+        'password',
     ];
 
     public function role()
